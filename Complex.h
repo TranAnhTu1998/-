@@ -8,6 +8,7 @@ struct complex_number{
     float read_number;
     float virtual_number;
 
+    complex_number(float re, float img);
     void importComplex(float re, float img);
     void exportComplex();
     complex_number sumTwoComplexNumbers(complex_number comp);

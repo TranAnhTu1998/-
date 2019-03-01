@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1551440925 source:g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\complex.cpp
+1551450074 source:g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\complex.cpp
 	"complex.h"
 	"iostream"
 
-1551441551 g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\complex.h
+1551450027 g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\complex.h
 
-1551441445 source:g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\main.cpp
+1551441553 source:g:\folderlaptrinh\laptrinhc\КомплексныеЧисла\main.cpp
 	"iostream"
 	"Complex.h"
 
