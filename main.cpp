@@ -1,108 +1,228 @@
 #include <iostream>
+#include <cmath>
+#define pi 3.14
 using namespace std;
-void importArray(int *a, unsigned n){
-    cout << "Enter values into the array: ";
-    for(unsigned i = 0; i < n; i ++){
-        cin >> a[i];
+struct Child{
+    private:
+        char name[10];
+        char firt_name[10];
+        int age;
+
+    public:
+        void importChild(){
+            cout <<"* Name: ";
+            cin >> name;
+            cout <<"* Firt name: ";
+            cin >> firt_name;
+            cout << "* Age: ";
+            cin >> age;
+        }
+        void dispayChild(){
+            cout <<"+ " << name << endl;
+            cout <<"+ "<< firt_name << endl;
+            cout << "+ " << age << endl;
+        }
+};
+struct Tiles{
+    public:
+        char brand[20];
+        float size_h;
+        float size_w;
+        float price;
+
+        void importData(){
+            //cout << "-Impor"
+            cout <<"* Brand: ";
+            cin >> brand;
+            cout <<"* Size high: ";
+            cin >> size_h;
+            cout << "* Size width: ";
+            cin >> size_w;
+            cout << "* Price: ";
+            cin >> price;
+        }
+        void getData(){
+            //cout <<
+            cout <<"+ " << brand << endl;
+            cout <<"+ "<< size_h << endl;
+            cout << "+ " << size_w << endl;
+            cout << "+ " << price << endl;
+        }
+};
+struct complex_number{
+    public:
+    double read_number;
+    double virtual_number;
+
+    complex_number(double re, double img){
+        read_number = re;
+        virtual_number = img;
     }
-}
-void exportArray(int *a, unsigned n){
-    for(unsigned i = 0; i < n; i ++){
-        cout << a[i] << " ";
+
+    void importComplex(double re, double img){
+        read_number = re;
+        virtual_number = img;
     }
-}
-int sumArray(int *a, unsigned n){
-    int s = 0;
-    for(unsigned i = 0; i < n; i ++){
-        s += a[i];
+
+    double modulComplex(){
+        return sqrt(read_number*read_number + virtual_number*virtual_number);
     }
+
+    double agumentComplex(){
+
+        if(read_number == 0){
+            return pi/2;
+        }
+        else{
+            double agm = atan(virtual_number/read_number);
+            if(read_number >= 0){
+                return agm;
+            }
+            else if( virtual_number < 0){
+                return agm - pi;
+            }
+            else{
+                return agm + pi;
+            }
+        }
+    /*void exportComplex();
+    complex_number sumTwoComplexNumbers(complex_number comp);
+    complex_number effxectTwoComplexNumbers(complex_number comp);
+    complex_number calculatesTwoComplexNumbers(complex_number comp);*/
+    }
+};
+struct Vector{
+    private:
+    double a;
+    double b;
+
+    public:
+    Vector(double x = 0.0, double y = 0.0){
+        a = x;
+        b = y;
+    }
+
+    void importVecto(double x = 0, double y = 0){
+        a = x;
+        b = y;
+    }
+
+    void displayVecto(){
+        cout << "(" << a << "," << b << ")";
+    }
+
+    double Modul(){
+        return sqrt(a*a + b*b);
+    }
+
+Vector addition(Vector v1, Vector v2){
+    Vector s;
+    s.a = v1.a + v2.a;
+    s.b = v1.b + v2.b;
     return s;
 }
-/*Функция f1 переводит элемент a[k] на первую позицию в массиве.*/
-void f1(int *a, unsigned k){
-    int x = a[k];
-    for(unsigned i = k; i > 0; i --){
-        a[i] = a[i-1];
+Vector subtraction(Vector v1, Vector v2){
+        Vector h;
+        h.a = v1.a - v2.a;
+        h.b = v1.b - v2.b;
+        return h;
     }
-    a[0] = x;
+};
+//int F1::F1_2 = 2;
+void E2(){
+    cout << "Exersion 2"<< endl;
+    Tiles ti1, ti2;
+    cout << "-Import" << endl;
+    cout << "1.Tiles fires" << endl;
+    ti1.importData();
+    cout << "2.Tiles second" << endl;
+    ti2.importData();
+
+    cout << "-Desplay" << endl;
+    cout << "1.Tiles fires" << endl;
+    ti1.getData();
+    cout << "2.Tiles second" << endl;
+    ti2.getData();
 }
-/*Функция f2 переводит элемент a[k] в положение,
-в котором он больше,
-чем элемент перед ним, и меньше,
-чем элемент за ним.*/
-void f2(int *a, unsigned k){
-    int i = k - 1;
-    //cout << "i = " << i << endl;
-    if(a[i] != a[k]){
-        while(i >= 0 && a[i] > a[k]){
-            i --;
-        }
-        //cout << "i = " << i << endl;
-        int x = a[k];
-        //cout << "x = " << x << endl;
-        int j = k;
-        while(j >= i+2){
-            a[j] = a[j - 1];
-            j --;
-        }
-        a[i+1] = x;
-        //cout <<"a[i + 1] = " << a[i + 1] << endl;
-    }
+void E1(){
+    Child chi1, chi2;
+    cout << "-Import" << endl;
+    cout << "1. Child first: " << endl;
+    chi1.importChild();
+    cout << "\n2. Child second: " << endl;
+    chi2.importChild();
+    cout << "-Display" << endl;
+    cout << "Child first: " << endl;
+    chi1.dispayChild();
+    cout << "\nChild second: " << endl;
+    chi2.dispayChild();
 }
-/*Функция f3 переводит элемент a[k] в положение,
-которое меньше,
-чем элемент перед ним, и больше,
-чем элемент за ним.*/
-void f3(int *a, unsigned k){
-    int i = k - 1;
-    if(a[i] != a[k]){
-        while(i >= 0 && a[i] < a[k]){
-            i --;
-        }
-        int x = a[k];
-        int j = k;
-        while(j >= i+2){
-            a[j] = a[j - 1];
-            j --;
-        }
-        a[i+1] = x;
-    }
+void E3(){
+    cout << "Exer 3" << endl;
+    double x, y;
+    cout << "-Import" << endl;
+    cout << "Re: ";
+    cin >> x;
+    cout << "Im: ";
+    cin >> y;
+    complex_number cml1(x, y);
+    cout<< "Modul: " << cml1.modulComplex() << endl;
+    cout<< "Agument: " << cml1.agumentComplex() << endl;
+
 }
-void fold(int *a, unsigned n, void (*f)(int *, unsigned)){
-    for(unsigned i = 1; i < n; i ++){
-        f(a, i);
-        //exportArray(a,n);
-        //cout << "\n";
-    }
+void E4(){
+    double x, y;
+    cout << "Enter vecto 1: ";
+    cin >> x >> y;
+    Vector v1(x, y);
+
+    cout << "Enter vecto 2: ";
+    cin >> x >> y;
+    Vector v2(x, y);
+
+    cout << "Vector 1 = ";
+    v1.displayVecto();
+    cout << "\nModul Vector 1 = " << v1.Modul() << endl;
+
+    cout << "Vector 2 = ";
+    v2.displayVecto();
+    cout << "\nModul Vector 2 = " << v2.Modul() << endl;
+    cout << "Vector 1 + Vector 2  = ";
+    v1.addition(v1,v2).displayVecto();
+    cout << endl;
+    cout << "Vector 1 - Vector 2  = " ;
+    v1.subtraction(v1,v2).displayVecto();
+    cout << endl;
+
 }
 
 int main()
 {
-    unsigned n;
-    int *a;
-    cout << "Enter the number of elements in the array: ";
-    cin >> n;
-    a = (int*)calloc(n, sizeof(int));
-    importArray(a, n);
-    void (*f_general)(int *, unsigned, void (*)(int *, unsigned));
-    f_general = fold;
-    int sum = sumArray(a, n);
-    cout << "The first value in the array is: a[0] = " << a[0] << endl;
-    cout << "The sum of the first elements in the array is: sum " << sum << endl;
-    if(a[0] == sum){
-        cout << "Because a[0] = sum, the array is:";
-        f_general(a, n, f1);
-        exportArray(a, n);
-    }
-    else if(a[0] < sum){
-        cout << "Because a[0] < sum, the array is: ";
-        f_general(a, n, f2);
-        exportArray(a, n);
-    }
-    else{
-        cout << "Because a[0] > sum, the array is: ";
-        f_general(a, n, f3);
-        exportArray(a, n);
+    int i;
+    while(1){
+        cout << "Selective: ";
+        cin >> i;
+        switch(i){
+            case 1:
+                E1();
+            break;
+
+            case 2:
+                E2();
+            break;
+
+            case 3:
+                E3();
+            break;
+
+            case 4:
+                E4();
+            break;
+
+            default: cout << "Invalid data!"<< endl;
+        }
     }
     return 0;
 }
+
+
