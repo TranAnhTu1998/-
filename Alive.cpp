@@ -13,8 +13,8 @@ class  Alive{
         string getName();
 
 
-        void importAlive();
-        void displayAlive();
+       virtual void importAlive();
+        virtual void displayAlive();
 
 };
 
@@ -45,9 +45,6 @@ void Alive ::  displayAlive(){
 }
 
 
-
-
-
 //Fish
 class Fish : public Alive{
     private:
@@ -63,8 +60,8 @@ class Fish : public Alive{
         void setColor(string species);
         string getColor();
         
-        void importAlive();
-        void displayAlive();
+        void importAlive() override;
+        void displayAlive() override;
 
 };
 
@@ -126,11 +123,10 @@ class Bird : public Alive{
         void setColor(string species);
         string getColor();
         
-        void importAlive();
-        void displayAlive();
+        void importAlive() override;
+        void displayAlive() override;
 
 };
-
 
 void Bird :: setSpecies(string species){
     this->species = species;
@@ -188,11 +184,11 @@ class Animal : public Alive{
         void setColor(string color);
         string getColor();
         
-        void importAlive();
-        void displayAlive();
-        
         void setNumberLegs(short number_legs);
         short getNumberLegs();
+        
+        void importAlive() override;
+        void displayAlive() override;
 
 };
 void Animal :: setSpecies(string species){
@@ -257,8 +253,8 @@ class Dog : public Animal{
         void setWeight(short weight);
         short getWeight();
         
-        void importAlive();
-        void displayAlive();
+        void importAlive() override;
+        void displayAlive() override;
 
 };
 Dog::Dog(string name , string species, string color, short number_legs, short weight){
@@ -293,12 +289,12 @@ void Dog :: displayAlive(){
 }
 
 //Car
-class Car : public Animal{
+class Cat : public Animal{
     private:
     	short weight;
     public:
-        Car(string name = "", string species = "", string color = "",  short number_legs =  4, short weight= 0);
-        ~Car();
+        Cat(string name = "", string species = "", string color = "",  short number_legs =  4, short weight= 0);
+        ~Cat();
         void setWeight(short weight);
         short getWeight();
         
@@ -306,32 +302,32 @@ class Car : public Animal{
         void displayAlive();
 
 };
-Car::Car(string name , string species, string color, short number_legs, short weight){
+Cat::Cat(string name , string species, string color, short number_legs, short weight){
 	this->setName(name);
     this->setSpecies(species);
     this->setColor(color);
     this->setNumberLegs(number_legs);
 	this->weight = weight;
 }
-Car::~Car(){
+Cat::~Cat(){
     delete(this);
 }
 
-void Car::setWeight(short weight){
+void Cat::setWeight(short weight){
 	this->weight = weight;
 }
 
-short Car::getWeight(){
+short Cat::getWeight(){
 	return this->weight;
 }
 
-void Car :: importAlive(){
+void Cat :: importAlive(){
 	this->Animal::importAlive();
     cout <<"+ Weight : " ;
     cin >> this->weight;
 }
 
-void Car :: displayAlive(){
+void Cat :: displayAlive(){
     this->Animal::displayAlive();
     cout << "5. Weight : " << getWeight() << endl;
 }
@@ -342,7 +338,7 @@ int main()
 	Fish *fi = new Fish("Carp", "freshwater", "Yellow");
 	Animal *an = new Animal("Animal", "breast", "Unknow", 0);
 	Dog *dog = new Dog("Kika", "Pug", "black", 4, 25);
-	Car *car = new Car("Caci", "enlighs", "yellow", 4, 20);
+	Cat *cat = new Cat("Caci", "enlighs", "yellow", 4, 20);
 	 
     cout << "*Brid"<< endl;
     br->displayAlive();
@@ -357,7 +353,7 @@ int main()
     dog->displayAlive();
     
     cout << "*Car"<< endl;
-    car->displayAlive();
+    cat->displayAlive();
     
     
     //cout << "Hello world!" << endl;
