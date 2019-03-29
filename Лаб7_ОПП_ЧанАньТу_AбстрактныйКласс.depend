@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1553713893 source:g:\folderlaptrinh\laptrinhc++\Ћаб6_ќѕѕ_„анјнь“у_aбстрактный ласс\main.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<strings.h>
+	<Human.h>
+
+1553716099 g:\folderlaptrinh\laptrinhc++\Ћаб6_ќѕѕ_„анјнь“у_aбстрактный ласс\include\human.h
+	<string>
+
+1553715510 source:g:\folderlaptrinh\laptrinhc++\Ћаб6_ќѕѕ_„анјнь“у_aбстрактный ласс\src\human.cpp
+	"Human.h"
+	<iostream>
+
+1553765182 source:g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\main.cpp
+	<iostream>
+	<string>
+	<Human.h>
+	"student.h"
+	"boss.h"
+
+1553720264 g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\include\human.h
+	<string>
+
+1553763892 source:g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\src\human.cpp
+	"Human.h"
+	<iostream>
+
+1553765140 source:g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\student.cpp
+	"student.h"
+
+1553765008 g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\student.h
+	"Human.h"
+
+1553763619 source:g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\boss.cpp
+	"boss.h"
+	<iostream>
+
+1553764117 g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\boss.h
+	<Human.h>
+
+1553763977 g:\folderlaptrinh\laptrinhc++\Ћаб7_ќѕѕ_„анјнь“у_aбстрактный ласс\human.h
+	<iostream>
+	<string>
+
